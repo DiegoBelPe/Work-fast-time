@@ -17,6 +17,7 @@ function Task() {
           <li key={task.id}>{task.title}</li>
         ))}
       </ul>
+      <button className="btn-blue" type="button">Add Task</button>
     </div>
   );
 }
