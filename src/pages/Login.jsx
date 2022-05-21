@@ -1,12 +1,58 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { UserContext } from '../context/UserProvider';
 
 function Login() {
-  const { user } = useContext(UserContext);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { loginUser, logoutUser } = useContext(UserContext);
+  const handleSubmitLogin = async (e) => {
+    e.preventDefault();
+    console.log('procesando form:', email, password);
+    try {
+      await loginUser(email, password);
+      console.log('Usuario logueado');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleChangeEmailLogin = (e) => { setEmail(e.target.value); };
+  const handleChangePasswordLogin = (e) => { setPassword(e.target.value); };
+  const handlerClickLogout = () => {
+    try {
+      logoutUser();
+      console.log('Usuario deslogueado');
+    } catch (error) {
+      console.log('error:', error);
+    }
+  };
   return (
     <div>
       <h1>Login</h1>
-      <h2>{user ? 'En linea' : 'offline'}</h2>
+      <form onSubmit={handleSubmitLogin}>
+        <label htmlFor="email">
+          Email
+          <input
+            id="email"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={handleChangeEmailLogin}
+          />
+        </label>
+        <label htmlFor="password">
+          Password
+          <input
+            id="password"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={handleChangePasswordLogin}
+          />
+        </label>
+        <button type="submit">Ingresar</button>
+        <button type="button" onClick={handlerClickLogout}>logout</button>
+
+      </form>
     </div>
   );
 }
