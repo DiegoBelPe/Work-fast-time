@@ -10,14 +10,23 @@ function Contact() {
       <section className="homeStart ">
         <div className="overlay flex flex-col items-center justify-center ">
           <div className="flex flex-col w-9/12 lg:w-auto lg:flex-row">
-            <div className="bg-slate-100 py-10 rounded lg:px-5 lg:pt-32">
-              <h2 className="text-white text-center text-5xl font-semibold mb-5 lg:text-5xl text-blue-400">
+            <div className="bg-slate-100 py-10 rounded lg:px-5">
+              <h2 className=" text-center text-5xl font-semibold mb-5 lg:text-5xl text-blue-400">
                 Contact
               </h2>
               {/* <p className="text-white text-center text-md font-semibold mb-5 lg:text-4xl">
                 Replies within 24 hours
               </p> */}
               <img src={image.img2} alt="" />
+              <div>
+                <h2 className="text-center text-2xl mb-4 text-blue-400">Nuestras Redes</h2>
+                <div className="flex gap-3 items-center justify-center ">
+                  <ion-icon className="shadow-2xl" name="logo-facebook" />
+                  <ion-icon name="logo-twitter" />
+                  <ion-icon name="logo-instagram" />
+                </div>
+
+              </div>
             </div>
 
             <form

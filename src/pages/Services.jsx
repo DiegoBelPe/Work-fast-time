@@ -1,27 +1,50 @@
-import React, { useState } from 'react';
-import data from '../data';
+import React from 'react';
 import image from '../assets/images';
+import Navbar from '../components/Navbar/Navbar';
+import '../components/HomeStart/HomeStart.css';
 
 function Projects() {
   // eslint-disable-next-line
-  const [items, setItems] = useState(data)
-  console.log('data:', data);
 
   return (
-    <section className="py-20 px-5 bg-gray-300 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:h-screen lg:pt-32">
-      <div className="w-4/5 h-2/4 rounded border border-solid border-blue-500 flex flex-col items-center">
+    <>
+      <Navbar />
+      <div className="homeStart mt-24">
         <div>
-          <img className="w-40 h-40 i" src={image.img2} alt="" />
+          <h2 className="text-center font-bold text-4xl text-white">Disfruta de nuestros servicios </h2>
         </div>
-        Lorem ipsum dolor sit.
+        <section className="py-20 px-20  grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:h-screen lg:pt-32">
+          <div className="w-auto h-auto md:h-2/4  lg:h-2/4 rounded border border-solid shadow-lg flex flex-col items-center bg-blue-400">
+            <div>
+              <img className="w-40 h-40 " src={image.img3} alt="" />
+            </div>
+            <div className="block text-center text-white font-semibold text-lg">
+              ✅ Elabora informes de tu trabajo a la medida
+              de
+              tus necesidades y obten un archivo pdf con los resultados.
+            </div>
+          </div>
+          <div className="w-auto h-auto md:h-2/4  lg:h-2/4 rounded border border-solid shadow-lg flex flex-col items-center bg-blue-400">
+            <div>
+              <img className="w-40 h-40 " src={image.img4} alt="" />
+            </div>
+            <div className="block text-center text-white font-semibold text-lg">
+              ✅ Lleva un control de tus tareas y fortalece tu productividad
+              en el trabajo.
+            </div>
+          </div>
+          <div className="w-auto h-auto md:h-2/4  lg:h-2/4 rounded border  flex flex-col items-center shadow-lg bg-blue-400">
+            <div>
+              <img className="w-40 h-40 " src={image.img5} alt="" />
+            </div>
+            <div className="block text-center text-white font-semibold text-lg">
+              ✅ Agenda tus  citas, entregas o reuniones de tu trabajo sin perder detalles.
+            </div>
+          </div>
+
+        </section>
       </div>
-      <div className="target_service">
-        Lorem ipsum dolor sit.
-      </div>
-      <div className="target_service">
-        Lorem ipsum dolor sit.
-      </div>
-    </section>
+    </>
   );
 }
 
