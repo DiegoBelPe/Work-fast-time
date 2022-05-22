@@ -4,7 +4,6 @@ import Button from '../Button/Button';
 function Navbar() {
   const links = [
     { name: 'Home', link: '/' },
-    { name: 'About', link: '/' },
     { name: 'Services', link: '/' },
     { name: 'Contact', link: '/' },
 
