@@ -7,6 +7,8 @@ import Register from './pages/Register';
 import HomeStart from './components/HomeStart/HomeStart';
 import Contact from './pages/Contact';
 import Services from './pages/Services';
+import NavbarUser from './components/NavbarUser/NavbarUser';
+import DashUser from './pages/DashUser';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/homestart" element={<HomeStart />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/service" element={<Services />} />
+        <Route path="navbar-user" element={<NavbarUser />} />
+        <Route path="dash-user" element={<DashUser />} />
       </Routes>
     </BrowserRouter>
   );

@@ -3,6 +3,7 @@ import cohete from './cohete.svg';
 import informe from './Online_report.svg';
 import tarea from './Completed_task.svg';
 import calendario from './Calendar.svg';
+import user from './user1.png';
 
 export default {
   img1: home,
@@ -10,5 +11,6 @@ export default {
   img3: informe,
   img4: tarea,
   img5: calendario,
+  img6: user,
 
 };
