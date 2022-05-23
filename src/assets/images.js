@@ -4,6 +4,8 @@ import informe from './Online_report.svg';
 import tarea from './Completed_task.svg';
 import calendario from './Calendar.svg';
 import user from './user1.png';
+import logoInf from './informe.png';
+import consolidadoInf from './consolidadoInf.png';
 
 export default {
   img1: home,
@@ -12,5 +14,7 @@ export default {
   img4: tarea,
   img5: calendario,
   img6: user,
+  img7: logoInf,
+  img8: consolidadoInf,
 
 };
