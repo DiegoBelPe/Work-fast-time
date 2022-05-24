@@ -1,16 +1,19 @@
 import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { loginUser, logoutUser } = useContext(UserContext);
+  const navegate = useNavigate();
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     console.log('procesando form:', email, password);
     try {
       await loginUser(email, password);
       console.log('Usuario logueado');
+      navegate('/dash-user');
     } catch (error) {
       console.log(error);
     }

@@ -15,7 +15,7 @@ function Task() {
       <h1 className="text-3xl font-bold underline">
         Hello world!
       </h1>
-      <ul>
+      <ul className="text-center">
         {tasks.map((task) => (
           <li key={task.id}>{task.title}</li>
         ))}

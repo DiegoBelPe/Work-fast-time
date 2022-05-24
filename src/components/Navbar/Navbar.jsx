@@ -4,8 +4,8 @@ import Button from '../Button/Button';
 function Navbar() {
   const links = [
     { name: 'Home', link: '/' },
-    { name: 'Services', link: '/' },
-    { name: 'Contact', link: '/' },
+    { name: 'Services', link: '/service' },
+    { name: 'Contact', link: '/contact' },
 
   ];
   const [open, setOpen] = useState(false);
