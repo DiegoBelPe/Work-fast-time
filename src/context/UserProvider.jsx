@@ -8,6 +8,7 @@ export const UserContext = createContext();
 function UserProvider({ children }) {
   const [user, setUser] = useState(true);
   useEffect(() => {
+    // eslint-disable-next-line no-shadow
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       console.log('user:', user);
       if (user) {
