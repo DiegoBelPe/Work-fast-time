@@ -6,7 +6,7 @@ export const UserContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 function UserProvider({ children }) {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
   useEffect(() => {
     // eslint-disable-next-line no-shadow
     const unsubscribe = onAuthStateChanged(auth, (user) => {

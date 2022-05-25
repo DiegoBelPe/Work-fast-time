@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
 
-// eslint-disable-next-line react/prop-types
-function RequireAuth({ children }) {
+function RequireAuth() {
   const { user } = useContext(UserContext);
 
   if (!user) {
     return <Navigate to="/login" />;
   }
-  return children;
+  return <Outlet />;
 }
 
 export default RequireAuth;

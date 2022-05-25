@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
@@ -8,9 +8,11 @@ import FormError from '../components/FormError/FormError';
 import FormInput from '../components/FormInput/FormInput';
 import TitleForm from '../components/TitleForm/TitleForm';
 import ButtonForm from '../components/ButtonForm/ButtonForm';
+import ButtonLoading from '../components/ButtonLoading/ButtonLoading';
 
 function Login() {
   const { loginUser } = useContext(UserContext);
+  const [loading, setLoading] = useState(false);
   const navegate = useNavigate();
   const { required, patternEmail, minLength, validateTrim } = formValidate();
   const {
@@ -22,6 +24,7 @@ function Login() {
 
   const onSubmit = async ({ email, password }) => {
     try {
+      setLoading(true);
       await loginUser(email, password);
       navegate('/dash-user');
     } catch (error) {
@@ -30,6 +33,8 @@ function Login() {
       setError(code, {
         message,
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -63,7 +68,11 @@ function Login() {
         >
           <FormError error={errors.password} />
         </FormInput>
-        <ButtonForm text="Login" type="submit" />
+        {
+          loading
+            ? <ButtonLoading />
+            : <ButtonForm text="Login" type="submit" />
+        }
 
       </form>
     </div>

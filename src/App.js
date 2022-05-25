@@ -15,6 +15,8 @@ import FormReport from './components/FormReport/FormReport';
 import RequireAuth from './components/RequireAuth';
 import { UserContext } from './context/UserProvider';
 import LayoutContainerForm from './components/LayoutContainerForm/LayoutContainerForm';
+import ButtonReport from './components/ButtonReport/ButtonReport';
+import NotFound from './pages/NotFound';
 
 function App() {
   const { user } = useContext(UserContext);
@@ -30,20 +32,27 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/service" element={<Services />} />
         <Route path="navbar-user" element={<NavbarUser />} />
-        <Route
+        {/* <Route
           path="dash-user"
           element={(
             <RequireAuth>
               <DashUser />
             </RequireAuth>
       )}
-        />
+        /> */}
+
+        <Route path="/" element={<RequireAuth />}>
+          <Route path="/dash-user" element={<DashUser />} />
+          <Route path="/dash-principal" element={<ButtonReport />} />
+        </Route>
         <Route path="/" element={<LayoutContainerForm />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Route>
         <Route path="/task" element={<Task />} />
         <Route path="/form" element={<FormReport />} />
+        <Route path="/dash-principal" element={<ButtonReport />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
