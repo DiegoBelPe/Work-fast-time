@@ -19,9 +19,9 @@ export const formValidate = () => ({
       return true;
     },
   },
-  validateEquals(getValues) {
+  validateEquals(value) {
     return {
-      equals: (v) => v === getValues('password')
+      equals: (v) => v === value
       || 'El password no coincide',
     };
   },

@@ -25,11 +25,12 @@ function Register() {
   const onSubmit = async ({ email, password }) => {
     try {
       await registerUser(email, password);
-      navegate('/');
+      navegate('/login');
     } catch (error) {
       console.log(error.code);
-      setError('firebase', {
-        message: erroresFirebase(error.code),
+      const { code, message } = erroresFirebase(error.code);
+      setError(code, {
+        message,
       });
     }
   };
@@ -66,7 +67,7 @@ function Register() {
           placeholder="Password2"
         // eslint-disable-next-line react/jsx-props-no-spreading
           {...register('password2', {
-            validate: validateEquals(getValues),
+            validate: validateEquals(getValues('password')),
           })}
         >
           <FormError error={errors.password2} />

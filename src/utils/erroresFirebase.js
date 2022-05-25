@@ -1,11 +1,35 @@
 export const erroresFirebase = (code) => {
   switch (code) {
     case 'auth/email-already-in-use':
-      return 'El email ya esta en uso';
+      return {
+        code: 'email',
+        message: 'Usuario ya registrado',
+
+      };
     case 'auth/invalid-email':
-      return 'formato de email valido';
+      return {
+        code: 'email',
+        message: 'Email no valido',
+
+      };
+    case 'auth/user-not-found':
+      return {
+        code: 'email',
+        message: 'Usuario no registrado',
+
+      };
+    case 'auth/wrong-password':
+      return {
+        code: 'password',
+        message: 'Contraseña incorrecta',
+
+      };
     default:
-      return 'Error desconocido';
+      return {
+        code: 'email',
+        message: 'Error desconocido',
+
+      };
   }
 };
 
