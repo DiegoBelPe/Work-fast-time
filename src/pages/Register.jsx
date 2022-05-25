@@ -7,6 +7,8 @@ import { formValidate } from '../utils/formValidate';
 
 import FormError from '../components/FormError/FormError';
 import FormInput from '../components/FormInput/FormInput';
+import TitleForm from '../components/TitleForm/TitleForm';
+import ButtonForm from '../components/ButtonForm/ButtonForm';
 
 function Register() {
   /*  const [email, setEmail] = useState('');
@@ -37,43 +39,49 @@ function Register() {
 
   return (
     <div>
-      <h1>Register</h1>
+      <TitleForm text="Register" />
       <FormError error={errors.firebase} />
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormInput
           type="email"
-          placeholder="Email"
+          placeholder="Ingrese su email"
          // eslint-disable-next-line react/jsx-props-no-spreading
           {...register('email', {
             required,
             pattern: patternEmail,
           })}
+          label="Email"
+          error={errors.email}
         >
           <FormError error={errors.email} />
         </FormInput>
         <FormInput
           type="password"
-          placeholder="Password"
+          placeholder="Ingrese su password"
         // eslint-disable-next-line react/jsx-props-no-spreading
           {...register('password', {
             minLength,
             validate: validateTrim,
           })}
+          label="Password"
+          error={errors.password}
         >
           <FormError error={errors.password} />
         </FormInput>
         <FormInput
           type="password"
-          placeholder="Password2"
+          placeholder="Ingrese su password"
         // eslint-disable-next-line react/jsx-props-no-spreading
           {...register('password2', {
             validate: validateEquals(getValues('password')),
           })}
+          label="Confirmar Password"
+          error={errors.password2}
         >
           <FormError error={errors.password2} />
         </FormInput>
 
-        <button type="submit">Register</button>
+        <ButtonForm text="Registrar" type="submit" />
 
       </form>
     </div>

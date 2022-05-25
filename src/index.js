@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import UserProvider from './context/UserProvider';
+import 'flowbite';
 /* import store from './store'; */
 
 ReactDOM.render(

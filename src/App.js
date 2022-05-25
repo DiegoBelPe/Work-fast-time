@@ -14,6 +14,7 @@ import Task from './components/Task/Task';
 import FormReport from './components/FormReport/FormReport';
 import RequireAuth from './components/RequireAuth';
 import { UserContext } from './context/UserProvider';
+import LayoutContainerForm from './components/LayoutContainerForm/LayoutContainerForm';
 
 function App() {
   const { user } = useContext(UserContext);
@@ -25,8 +26,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/navbar" element={<Navbar />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
         <Route path="/homestart" element={<HomeStart />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/service" element={<Services />} />
@@ -39,6 +38,10 @@ function App() {
             </RequireAuth>
       )}
         />
+        <Route path="/" element={<LayoutContainerForm />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
         <Route path="/task" element={<Task />} />
         <Route path="/form" element={<FormReport />} />
       </Routes>
