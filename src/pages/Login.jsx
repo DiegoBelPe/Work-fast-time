@@ -6,6 +6,8 @@ import { erroresFirebase } from '../utils/erroresFirebase';
 import { formValidate } from '../utils/formValidate';
 import FormError from '../components/FormError/FormError';
 import FormInput from '../components/FormInput/FormInput';
+import TitleForm from '../components/TitleForm/TitleForm';
+import ButtonForm from '../components/ButtonForm/ButtonForm';
 
 function Login() {
   const { loginUser } = useContext(UserContext);
@@ -33,31 +35,35 @@ function Login() {
 
   return (
     <div>
-      <h1>Login</h1>
+      <TitleForm text="Login" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormInput
+          label="Email"
           type="email"
-          placeholder="Email"
+          placeholder="Ingrese su email"
          // eslint-disable-next-line react/jsx-props-no-spreading
           {...register('email', {
             required,
             pattern: patternEmail,
           })}
+          error={errors.email}
         >
           <FormError error={errors.email} />
         </FormInput>
         <FormInput
+          label="Password"
           type="password"
-          placeholder="Password"
+          placeholder="Ingrese su password"
         // eslint-disable-next-line react/jsx-props-no-spreading
           {...register('password', {
             minLength,
             validate: validateTrim,
           })}
+          error={errors.password}
         >
           <FormError error={errors.password} />
         </FormInput>
-        <button type="submit">Ingresar</button>
+        <ButtonForm text="Login" type="submit" />
 
       </form>
     </div>
