@@ -1,59 +1,63 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
+import { erroresFirebase } from '../utils/erroresFirebase';
+import { formValidate } from '../utils/formValidate';
+import FormError from '../components/FormError/FormError';
+import FormInput from '../components/FormInput/FormInput';
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const { loginUser, logoutUser } = useContext(UserContext);
+  const { loginUser } = useContext(UserContext);
   const navegate = useNavigate();
-  const handleSubmitLogin = async (e) => {
-    e.preventDefault();
-    console.log('procesando form:', email, password);
+  const { required, patternEmail, minLength, validateTrim } = formValidate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+  } = useForm();
+
+  const onSubmit = async ({ email, password }) => {
     try {
       await loginUser(email, password);
-      console.log('Usuario logueado');
       navegate('/dash-user');
     } catch (error) {
-      console.log(error);
+      console.log(error.code);
+      const { code, message } = erroresFirebase(error.code);
+      setError(code, {
+        message,
+      });
     }
   };
-  const handleChangeEmailLogin = (e) => { setEmail(e.target.value); };
-  const handleChangePasswordLogin = (e) => { setPassword(e.target.value); };
-  const handlerClickLogout = () => {
-    try {
-      logoutUser();
-      console.log('Usuario deslogueado');
-    } catch (error) {
-      console.log('error:', error);
-    }
-  };
+
   return (
     <div>
       <h1>Login</h1>
-      <form onSubmit={handleSubmitLogin}>
-        <label htmlFor="email">
-          Email
-          <input
-            id="email"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={handleChangeEmailLogin}
-          />
-        </label>
-        <label htmlFor="password">
-          Password
-          <input
-            id="password"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={handleChangePasswordLogin}
-          />
-        </label>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <FormInput
+          type="email"
+          placeholder="Email"
+         // eslint-disable-next-line react/jsx-props-no-spreading
+          {...register('email', {
+            required,
+            pattern: patternEmail,
+          })}
+        >
+          <FormError error={errors.email} />
+        </FormInput>
+        <FormInput
+          type="password"
+          placeholder="Password"
+        // eslint-disable-next-line react/jsx-props-no-spreading
+          {...register('password', {
+            minLength,
+            validate: validateTrim,
+          })}
+        >
+          <FormError error={errors.password} />
+        </FormInput>
         <button type="submit">Ingresar</button>
-        <button type="button" onClick={handlerClickLogout}>logout</button>
 
       </form>
     </div>
