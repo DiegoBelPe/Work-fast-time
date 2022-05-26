@@ -7,6 +7,9 @@ import user from './user1.png';
 import logoInf from './informe.png';
 import consolidadoInf from './consolidadoInf.png';
 import abeja from './logoAbeja.png';
+import logoNegro from './logoNegro.png';
+import logoBlanco from './logoWFT.png';
+import iconoPage from './iconoWFT.png';
 
 export default {
   img1: home,
@@ -18,5 +21,8 @@ export default {
   img7: logoInf,
   img8: consolidadoInf,
   img9: abeja,
+  img10: logoNegro,
+  img11: logoBlanco,
+  img12: iconoPage,
 
 };
