@@ -18,6 +18,7 @@ import LayoutContainerForm from './components/LayoutContainerForm/LayoutContaine
 import ButtonReport from './components/ButtonReport/ButtonReport';
 import NotFound from './pages/NotFound';
 import Post from './pages/Post';
+import ImagesApp from './pages/ImagesApp';
 
 function App() {
   const { user } = useContext(UserContext);
@@ -55,6 +56,7 @@ function App() {
         <Route path="/dash-principal" element={<ButtonReport />} />
         <Route path="/*" element={<NotFound />} />
         <Route path="form-report" element={<Post />} />
+        <Route path="images-app" element={<ImagesApp />} />
       </Routes>
     </BrowserRouter>
   );
