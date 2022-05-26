@@ -6,6 +6,7 @@ import calendario from './Calendar.svg';
 import user from './user1.png';
 import logoInf from './informe.png';
 import consolidadoInf from './consolidadoInf.png';
+import abeja from './logoAbeja.png';
 
 export default {
   img1: home,
@@ -16,5 +17,6 @@ export default {
   img6: user,
   img7: logoInf,
   img8: consolidadoInf,
+  img9: abeja,
 
 };

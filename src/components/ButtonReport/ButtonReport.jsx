@@ -17,7 +17,7 @@ function ButtonReport() {
             Elaborar Informe de actividades
           </div>
           <Link
-            to="/service"
+            to="/form-report"
             className="mt-8 bg-white text-blue-700 p-2 px-4 rounded-full font-semibold transition-all hover:bg-blue-900 hover:text-white"
           >
             Iniciar

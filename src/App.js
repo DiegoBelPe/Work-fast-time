@@ -17,6 +17,7 @@ import { UserContext } from './context/UserProvider';
 import LayoutContainerForm from './components/LayoutContainerForm/LayoutContainerForm';
 import ButtonReport from './components/ButtonReport/ButtonReport';
 import NotFound from './pages/NotFound';
+import Post from './pages/Post';
 
 function App() {
   const { user } = useContext(UserContext);
@@ -53,6 +54,7 @@ function App() {
         <Route path="/form" element={<FormReport />} />
         <Route path="/dash-principal" element={<ButtonReport />} />
         <Route path="/*" element={<NotFound />} />
+        <Route path="form-report" element={<Post />} />
       </Routes>
     </BrowserRouter>
   );
