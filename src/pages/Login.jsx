@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
 import { erroresFirebase } from '../utils/erroresFirebase';
 import { formValidate } from '../utils/formValidate';
@@ -73,6 +73,16 @@ function Login() {
             ? <ButtonLoading />
             : <ButtonForm text="Login" type="submit" />
         }
+        <br />
+        <span className="text-sm text-gray-600 dark:text-gray-400 grid grid-flow-col justify-center gap-5 mt-5">
+          ¿No tienes una cuenta?
+          {' '}
+          <Link
+            to="/register"
+          >
+            Registrate
+          </Link>
+        </span>
 
       </form>
     </div>

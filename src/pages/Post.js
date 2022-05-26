@@ -36,7 +36,7 @@ class Post extends Component {
         <NavBarUser />
         { !this.state.postSubmitted ? (
 
-          <form className="m-28 grid gap-5 items-center text-center shadow-lg p-5 bg-blue-200" method="post">
+          <form className="lg:m-28 grid gap-5 items-center text-center shadow-lg p-5 bg-blue-200" method="post">
             <fieldset>
               <legend className="text-center text-4xl m-5">Realizar Informe</legend>
               <div className="w-auto mb-6">

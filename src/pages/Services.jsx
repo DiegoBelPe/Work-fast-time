@@ -9,11 +9,11 @@ function Projects() {
   return (
     <>
       <Navbar />
-      <div className="homeStart mt-24">
+      <div className="homeStart mt-24 ">
         <div>
           <h2 className="text-center font-bold text-4xl text-white">Disfruta de nuestros servicios </h2>
         </div>
-        <section className="py-20 px-20  grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:h-screen lg:pt-32">
+        <section className="py-5 px-5  grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:h-screen lg:pt-32 lg:py-5 lg:px-5">
           <div className="w-auto h-auto md:h-2/4  lg:h-2/4 rounded border border-solid shadow-lg flex flex-col items-center bg-blue-400">
             <div>
               <img className="w-40 h-40 " src={image.img3} alt="" />

@@ -1,10 +1,9 @@
 .homeStart{
   background-image: url("../../assets/imgHome.jpg");
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
-  height: 43.6rem;
-  padding: 5rem;
+  background-position: center;
+  background-size: cover;
+  height: 43rem;
   margin-top: 4.4rem;
 }
 
