@@ -5,7 +5,7 @@ import tarea from './Completed_task.svg';
 import calendario from './Calendar.svg';
 import user from './user1.png';
 import logoInf from './informe.png';
-import consolidadoInf from './consolidadoInf.png';
+import consolidadoInf from './IconoFoto.png';
 import abeja from './logoAbeja.png';
 import logoNegro from './logoNegro.png';
 import logoBlanco from './logoWFT.png';

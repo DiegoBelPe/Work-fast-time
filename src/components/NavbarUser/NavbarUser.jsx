@@ -6,7 +6,7 @@ import image from '../../assets/images';
 import { UserContext } from '../../context/UserProvider';
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
+  { name: 'homeDash', href: '/dash-user', current: true },
   { name: 'Tareas', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
 ];
