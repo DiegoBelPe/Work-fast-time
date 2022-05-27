@@ -47,8 +47,8 @@ function App() {
           <Route path="/dash-user" element={<DashUser />} />
           <Route path="/dash-principal" element={<ButtonReport />} />
           <Route path="/images-app" element={<ImagesApp />} />
+          <Route path="/form-report" element={<Post />} />
         </Route>
-        <Route path="/form-report" element={<Post />} />
         <Route path="/" element={<LayoutContainerForm />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
