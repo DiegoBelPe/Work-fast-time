@@ -52,7 +52,7 @@ function ImagesApp() {
           {docus.map((doc) => (
             <li key={doc}>
               <h3 className="text-xl">{doc.nombre}</h3>
-              <img src={doc.url} className="h-24 w-24 shadow-xl mt-5 mb-5" />
+              <img src={doc.url} className="h-40 w-auto shadow-xl mt-5 mb-5" />
               <hr />
             </li>
 
