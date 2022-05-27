@@ -46,7 +46,9 @@ function App() {
         <Route path="/" element={<RequireAuth />}>
           <Route path="/dash-user" element={<DashUser />} />
           <Route path="/dash-principal" element={<ButtonReport />} />
+          <Route path="/images-app" element={<ImagesApp />} />
         </Route>
+        <Route path="/form-report" element={<Post />} />
         <Route path="/" element={<LayoutContainerForm />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -55,8 +57,7 @@ function App() {
         <Route path="/form" element={<FormReport />} />
         <Route path="/dash-principal" element={<ButtonReport />} />
         <Route path="/*" element={<NotFound />} />
-        <Route path="form-report" element={<Post />} />
-        <Route path="images-app" element={<ImagesApp />} />
+
       </Routes>
     </BrowserRouter>
   );
